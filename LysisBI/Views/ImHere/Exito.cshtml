@@ -1,0 +1,84 @@
+﻿
+
+
+<html>
+<head>
+    <title>I'm Here!</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="~/Content/dashboard/assets/css/main.css" />
+    <link rel="stylesheet" href="/Content/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/login/assets/css/main.css" />
+
+</head>
+<body>
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <section id="header" class="wrapper">
+
+            <!-- Logo -->
+            <div id="logo">
+                <h1>You're Here!</h1>
+                <p>Unifametro</p>
+            </div>
+
+            <!-- Nav -->
+            <nav id="nav">
+
+                <ul>
+                    <li>
+                        <a href="#">Olá,&nbsp;@Session["Usuario"]</a>
+                        <ul>
+                            <li><a href="#">Sobre</a></li>
+                            <li><a href="#">Sair</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+        </section>
+    </div>
+
+    <div id="divPrincipal" class="container">
+        <br />
+        <div class="box">
+
+            &nbsp;@Session["NomeAluno"]<br />
+            &nbsp;Você registrou sua presença na aula de<br />
+            &nbsp; @Session["Disciplina"]<br />
+            &nbsp;do professor(a)&nbsp; @Session["Professor"]<br />
+            <br />
+            &nbsp;**Caso queira, pode tirar um print para registro**
+            
+        </div>
+
+        @using (Html.BeginForm("Logout", "ImHere", new { id = "form1122" }))
+        {
+            <div id="botaoFinalizar" align="center">
+
+                <input type="submit" value="Finalizar!" class="btn bg-success" />
+            </div>
+        }
+
+    </div>
+
+   
+
+
+
+    <!-- Scripts     -->
+    <script src="~/Content/dashboard/assets/js/jquery.min.js"></script>
+    <script src="~/Content/dashboard/assets/js/jquery.dropotron.min.js"></script>
+    <script src="~/Content/dashboard/assets/js/browser.min.js"></script>
+    <script src="~/Content/dashboard/assets/js/breakpoints.min.js"></script>
+    <script src="~/Content/dashboard/assets/js/util.js"></script>
+    <script src="~/Content/dashboard/assets/js/main.js"></script>
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,83 @@
+﻿@model LysisBI.Models.Services.AulaServices
+
+
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="~/Content/dashboard/assets/css/main.css" />
+    <link rel="stylesheet" href="/Content/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/login/assets/css/main.css" />
+</head>
+<body>
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <section id="header" class="wrapper">
+
+            <!-- Logo -->
+            <div id="logo">
+                <h1>I'm Here!</h1>
+                <p>Unifametro</p>
+            </div>
+
+            <!-- Nav -->
+            <nav id="nav">
+
+                <ul>
+                    <li>
+                        <a href="#">Olá,&nbsp;@Session["Usuario"]</a>
+                        <ul>
+                            <li><a href="#">Sobre</a></li>
+                            <li><a href="#">Sair</a></li>
+
+
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+        </section>
+    </div>
+
+    <div id="divPrincipal" class="container" align="center">
+        <br />
+        <br />
+        <div id="divPrincipal" class="box" align="center">
+            @using (Html.BeginForm())
+
+            {
+
+                <div class="fields" href="~/Content/login/assets/css/main.css">
+                    <br />
+                    
+                        @Html.TextBoxFor(m => m.Token, new { @placeholder = "Insira o token", @align = "center" })
+                        <br />
+
+
+                </div>
+
+                <ul class="actions stacked">
+                    <li><input type="submit" value="Validar" class="button bg-success" /> </li>
+                </ul>
+            }
+
+        </div>
+
+        </div>
+
+
+        <!-- Scripts     -->
+        <script src="~/Content/dashboard/assets/js/jquery.min.js"></script>
+        <script src="~/Content/dashboard/assets/js/jquery.dropotron.min.js"></script>
+        <script src="~/Content/dashboard/assets/js/browser.min.js"></script>
+        <script src="~/Content/dashboard/assets/js/breakpoints.min.js"></script>
+        <script src="~/Content/dashboard/assets/js/util.js"></script>
+        <script src="~/Content/dashboard/assets/js/main.js"></script>
+
+</body>
+</html>
+
+
+

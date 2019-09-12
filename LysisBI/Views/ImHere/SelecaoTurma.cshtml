@@ -1,0 +1,97 @@
+﻿@model LysisBI.Models.Services.AulaServices
+
+
+<html>
+<head>
+    <title>I'm Here!</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="~/Content/dashboard/assets/css/main.css" />
+    <link rel="stylesheet" href="/Content/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/login/assets/css/main.css" />
+</head>
+<body>
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <section id="header" class="wrapper">
+
+            <!-- Logo -->
+            <div id="logo">
+                <h1>I'm Here!</h1>
+                <p>Unifametro</p>
+            </div>
+
+            <!-- Nav -->
+            <nav id="nav">
+
+                <ul>
+                    <li>
+                        <a href="#">Olá,&nbsp;@Session["Usuario"]</a>
+                        <ul>
+                            <li><a href="#">Sobre</a></li>
+                            <li><a href="#">Sair</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+        </section>
+    </div>
+    <br />
+
+    <div id="divPrincipal" class="container">
+
+        <div class="card">
+            <div class="card-header bg-success">Professor(a), selecione a aula</div>
+            <br />
+
+            @using (Html.BeginForm("SelecaoTurma", "ImHereController", FormMethod.Post, new { id = "form11" }))
+
+
+            {
+                @Html.CheckBoxFor(m => m.Selected)
+                foreach (var item in Model.ListaDeAulas)
+                {
+
+
+                    <div class="card-block">
+
+                        <div class="row">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"
+                                           name="SelectedAula"
+                                           checked=@item.Selected
+                                           value="@item.Value" /> &nbsp;@item.Text
+                                    </label>
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+                    <br />
+                    <div id="botaoFinalizar" align="center">
+
+                        <input type="submit" value="Selecionar" class="btn bg-success" />
+                    </div>
+                }
+
+        </div>
+       
+
+        </div>
+
+    <!-- Scripts     -->
+    <script src="~/Content/dashboard/assets/js/jquery.min.js"></script>
+    <script src="~/Content/dashboard/assets/js/jquery.dropotron.min.js"></script>
+    <script src="~/Content/dashboard/assets/js/browser.min.js"></script>
+    <script src="~/Content/dashboard/assets/js/breakpoints.min.js"></script>
+    <script src="~/Content/dashboard/assets/js/util.js"></script>
+    <script src="~/Content/dashboard/assets/js/main.js"></script>
+
+
+</body>
+</html>
+

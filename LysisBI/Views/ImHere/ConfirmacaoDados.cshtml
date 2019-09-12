@@ -1,0 +1,117 @@
+﻿
+
+
+<html>
+<head>
+    <title>I'm Here!</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="~/Content/dashboard/assets/css/main.css" />
+    <link rel="stylesheet" href="/Content/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/login/assets/css/main.css" />
+
+
+</head>
+<body>
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <section id="header" class="wrapper">
+
+            <!-- Logo -->
+            <div id="logo">
+                <h1>I'm Here!</h1>
+                <p>Unifametro</p>
+            </div>
+
+            <!-- Nav -->
+            <nav id="nav">
+
+                <ul>
+                    <li>
+                        <a href="#">Olá,&nbsp;@Session["Usuario"]</a>
+                        <ul>
+                            <li><a href="#">Sobre</a></li>
+                            <li><a href="#">Sair</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+        </section>
+    </div>
+
+    
+    <div id="divContainer" class="container">
+        
+            <div class="card">
+                <div class="card-header bg-success">Dados da aula para confirmação</div>
+                <div class="card-block">
+                    <br />
+                    <div class="row">
+                        
+                        <label>&nbsp;Aluno: @Session["NomeAluno"]</label>
+                        
+                    </div>
+                   
+                    <div class="row">
+                        
+                        <label>&nbsp;Matrícula: @Session["Matricula"]</label>
+                        
+                    </div>
+
+                    <div class="row">
+                        
+                        <label>&nbsp;Disciplina: @Session["Disciplina"]</label>
+                        
+                    </div>
+                    <div class="row">
+                        
+                        <label>&nbsp;Turma: @Session["Turma"]</label>
+                        
+                    </div>
+                    <div class="row">
+                        
+                        <label>&nbsp;Turno: @Session["Turno"]</label>
+                        
+                    </div>
+                    <div class="row">
+                        
+                        <label>&nbsp;Professor: @Session["Professor"]</label>
+                        
+                    </div>
+
+                </div>
+
+            </div>
+            <br />
+
+
+
+            @using (Html.BeginForm("EfetivarPresenca", "ImHere", new { id = "form1122" }))
+            {
+                <div id="botaoConfirmacao">
+
+                    <input type="submit" value="I'm Here!" class="button bg-success" />
+
+
+                </div>
+            }
+
+
+    </div>
+
+    <!-- Scripts     -->
+    <script src="~/Content/dashboard/assets/js/jquery.min.js"></script>
+    <script src="~/Content/dashboard/assets/js/jquery.dropotron.min.js"></script>
+    <script src="~/Content/dashboard/assets/js/browser.min.js"></script>
+    <script src="~/Content/dashboard/assets/js/breakpoints.min.js"></script>
+    <script src="~/Content/dashboard/assets/js/util.js"></script>
+    <script src="~/Content/dashboard/assets/js/main.js"></script>
+
+
+
+</body>
+</html>
+
